@@ -19,70 +19,102 @@ export default function UserList() {
   const theme = useTheme();
   const isXs = useMediaQuery(theme.breakpoints.down('xs'));
   const isSm = useMediaQuery(theme.breakpoints.down('sm'));
-  const isMd = useMediaQuery(theme.breakpoints.down('md'));
 
   const userDelete = userID => {
     setUserDatas(userDatas.filter(userData => userData.id !== userID))
   }
 
-  const columns = [
-   {
-    field : 'id' ,
-    headerName : 'id',
-    minWidth : 50,
-    flex: 0.5
-   },
-   {
-    field : 'user' ,
-    headerName : 'User',
-    flex : 1 ,
-    minWidth : 150,
-    renderCell : (params) => {
-      return (
+  const commonColumns = [
+    {
+      field: 'id',
+      headerName: 'ID',
+      minWidth: 50,
+      flex: 0.5,
+    },
+    {
+      field: 'user',
+      headerName: 'User',
+      flex: 1,
+      minWidth: 150,
+      renderCell: (params) => {
+        return (
           <Link to={`user/${params.row.id}`}>
             <div className={style.userListUser}>
-              <img src={params.row.avatar} className={style.userListImg} />
+              <img src={params.row.avatar} className={style.userListImg} alt={params.row.username} />
               {params.row.username}
             </div>
           </Link>
-        )
-    }
-   },
-   {
-    field : 'email',
-    headerName : 'Email',
-    flex : 1,
-    minWidth : 150 ,
-   },
-   {
-    field : 'status' ,
-    headerName : 'Status',
-    flex : 0.5,
-    minWidth : 100
-  },
-  {
-    field : 'transaction' ,
-    headerName : 'TransAction',
-    flex : 1,
-    minWidth : 150
-  },
-  {
-    field : 'action',
-    headerName : 'Action',
-    flex : 1,
-    minWidth : 150,
-    renderCell : (params) => {
-     return (
-      <>
-        <Link to={`user/${params.row.id}`}>
-          <Button>Edit</Button>
-        </Link>
-        <DeleteOutlineIcon onClick={() => userDelete(params.row.id)} className={style.userListDelete}/>
-      </>
-      )
-    }
-  }
+        );
+      },
+    },
   ];
+
+  const desktopColumns = [
+    ...commonColumns,
+    {
+      field: 'email',
+      headerName: 'Email',
+      flex: 1,
+      minWidth: 150,
+    },
+    {
+      field: 'status',
+      headerName: 'Status',
+      flex: 0.5,
+      minWidth: 100,
+    },
+    {
+      field: 'transaction',
+      headerName: 'Transaction',
+      flex: 1,
+      minWidth: 150,
+    },
+    {
+      field: 'action',
+      headerName: 'Action',
+      flex: 1,
+      minWidth: 150,
+      renderCell: (params) => {
+        return (
+          <>
+            <Link to={`user/${params.row.id}`}>
+              <Button>Edit</Button>
+            </Link>
+            <DeleteOutlineIcon
+              onClick={() => userDelete(params.row.id)}
+              className={style.userListDelete}
+            />
+          </>
+        );
+      },
+    },
+  ];
+
+  const mobileColumns = [
+    ...commonColumns,
+    {
+      field: 'action',
+      headerName: 'Action',
+      flex: 1,
+      minWidth: 100,
+      renderCell: (params) => {
+        return (
+          <>
+            <Link to={`user/${params.row.id}`}>
+              <Button>Edit</Button>
+            </Link>
+            <DeleteOutlineIcon
+              onClick={() => userDelete(params.row.id)}
+              className={style.userListDelete}
+            />
+          </>
+        );
+      },
+    },
+  ];
+
+  const columns = isSm ? mobileColumns : desktopColumns;
+
 
   return (
     <div className='flex-[4] mx-2'>

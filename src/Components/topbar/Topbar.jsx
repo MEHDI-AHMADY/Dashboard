@@ -19,7 +19,7 @@ export default function Topbar({ showMenuHandler }) {
   return (
     <div className={style.topbar}>
         <div className={style.topbarWrapper}>
-            <div className="topbarMenu lg:hidden" onClick={showMenuHandler}>
+            <div className="cursor-pointer lg:hidden" onClick={showMenuHandler}>
                 <MenuIcon />    
             </div>
             <div>

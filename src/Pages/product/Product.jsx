@@ -8,7 +8,7 @@ const style = {
     productTitleContainer : `flex items-center justify-between`,
     productTitle : `text-xl`,
     productAddBtn : `w-[80px] p-[5px] cursor-pointer text-white text-[16px] bg-slate-700 rounded-md`,
-    productTop : `flex`,
+    productTop : `flex flex-col lg:flex-row`,
     productTopLeft : `flex-1`,
     productTopRight : `flex-1 p-5 m-5 shadow-normal`,
     productInfoTop : `flex items-center`,
