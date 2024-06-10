@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { showAlert } from "../../util";
 import axios from "axios";
 
@@ -9,7 +9,7 @@ const style = {
   loginForm: `flex flex-col items-center gap-3`,
   loginFormInput: `p-2 focus:outline-none`,
   loginBtn: `bg-white p-2 w-full hover:bg-slate-500 hover:text-white transition-all`,
-  loginFromWarning : `p-1 bg-slate-100 text-black`
+  loginFromWarning: `p-1 bg-slate-100 text-black`,
 };
 
 export default function NewUser() {
@@ -17,8 +17,14 @@ export default function NewUser() {
   const [userLastName, setUserLastName] = useState("");
   const [userJob, setUserJob] = useState("");
   const [userEmail, setUserEmail] = useState("");
-  const [submitted , setSubmitted] = useState(false);
-  const [allValid , setAllValid] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [allValid, setAllValid] = useState(false);
+
+  const usernameInputRef = useRef();
+
+  useEffect(() => {
+    usernameInputRef.current.focus();
+  }, []);
 
   const submitHandler = async (e) => {
     e.preventDefault();
@@ -32,23 +38,28 @@ export default function NewUser() {
       userEmail,
     };
 
-    if(userFirstName.length !== 0 && userLastName.length !== 0 && userEmail.length !== 0 && userJob.length !== 0){
+    if (
+      userFirstName.length !== 0 &&
+      userLastName.length !== 0 &&
+      userEmail.length !== 0 &&
+      userJob.length !== 0
+    ) {
       setAllValid(true);
     }
-    if(allValid){
+    if (allValid) {
       try {
         const res = await axios.post(
           "https://dashboard-8d24f-default-rtdb.firebaseio.com/users.json",
           newUserInfo
         );
-  
+
         setUserFirstName("");
         setUserLastName("");
         setUserJob("");
         setUserEmail("");
         setSubmitted(false);
         setAllValid(false);
-  
+
         showAlert({
           title: "NewUser created.",
           text: "The User has been created successfully.",
@@ -59,7 +70,6 @@ export default function NewUser() {
         console.error("Error :", err);
       }
     }
-    
   };
 
   return (
@@ -69,33 +79,40 @@ export default function NewUser() {
         <form onSubmit={submitHandler} className={style.loginForm}>
           <input
             type="text"
+            ref={usernameInputRef}
             className={style.loginFormInput}
             value={userFirstName}
-            onChange={(e) => setUserFirstName(e.target.value.trim())}
+            onChange={(e) => setUserFirstName(e.target.value)}
             placeholder="FirstName"
           />
           {submitted && userFirstName.length === 0 && (
-          <span className={style.loginFromWarning}>please fill the input</span>
+            <span className={style.loginFromWarning}>
+              please fill the input
+            </span>
           )}
           <input
             type="text"
             className={style.loginFormInput}
             value={userLastName}
-            onChange={(e) => setUserLastName(e.target.value.trim())}
+            onChange={(e) => setUserLastName(e.target.value)}
             placeholder="lastName"
           />
           {submitted && userLastName.length === 0 && (
-          <span className={style.loginFromWarning}>please fill the input</span>
+            <span className={style.loginFromWarning}>
+              please fill the input
+            </span>
           )}
           <input
             type="text"
             className={style.loginFormInput}
             value={userJob}
-            onChange={(e) => setUserJob(e.target.value.trim())}
+            onChange={(e) => setUserJob(e.target.value)}
             placeholder="Job"
           />
           {submitted && userJob.length === 0 && (
-          <span className={style.loginFromWarning}>please fill the input</span>
+            <span className={style.loginFromWarning}>
+              please fill the input
+            </span>
           )}
           <input
             type="text"
@@ -105,7 +122,9 @@ export default function NewUser() {
             placeholder="Email"
           />
           {submitted && userEmail.length === 0 && (
-          <span className={style.loginFromWarning}>please fill the input</span>
+            <span className={style.loginFromWarning}>
+              please fill the input
+            </span>
           )}
           <button type="submit" className={style.loginBtn}>
             Create
