@@ -59,7 +59,7 @@ const sidebarItems = [
       title: 'Staff',
       items: [
         { text: 'Manage', icon: <WorkOutlineIcon />, link: '/manage' },
-        { text: 'Analytics', icon: <TimeLineIcon />, link: '/staff-analytics' },
+        { text: 'Analytics', icon: <TimelineIcon />, link: '/staff-analytics' },
         { text: 'Report', icon: <ReportIcon />, link: '/staff-report' },
       ],
     },
