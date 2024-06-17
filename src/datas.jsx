@@ -1,5 +1,5 @@
 import LineStyleIcon from '@mui/icons-material/LineStyle';
-import TimeLineIcon from '@mui/icons-material/TimeLine';
+import TimelineIcon from '@mui/icons-material/Timeline';
 import TrendingUpIcon from '@mui/icons-material/TrendingUp';
 import PermIdentityIcon from '@mui/icons-material/PermIdentity';
 import StorefrontIcon from '@mui/icons-material/Storefront';
@@ -33,7 +33,7 @@ const sidebarItems = [
       title: 'Dashboard',
       items: [
         { text: 'Home', icon: <LineStyleIcon /> , link: '/' },
-        { text: 'Analytics', icon: <TimeLineIcon /> , link: '/analytics' },
+        { text: 'Analytics', icon: <TimelineIcon /> , link: '/analytics' },
         { text: 'Sales', icon: <TrendingUpIcon /> , link: '/sales' },
       ],
     },
