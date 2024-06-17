@@ -34,7 +34,7 @@ export default function Products() {
     {
       field: 'title',
       headerName: 'Name',
-      width: 140,
+      width: 80,
       renderCell: (params) => {
         return (
           <Link to={`/product/${params.row.id}`}>
