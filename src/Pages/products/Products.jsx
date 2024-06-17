@@ -34,7 +34,7 @@ export default function Products() {
     {
       field: 'title',
       headerName: 'Name',
-      width: 200,
+      width: 140,
       renderCell: (params) => {
         return (
           <Link to={`/product/${params.row.id}`}>
@@ -80,7 +80,7 @@ export default function Products() {
     {
       field: 'action',
       headerName: 'Action',
-      width: 120,
+      width: 80,
       renderCell: (params) => {
         return (
           <>

@@ -35,7 +35,7 @@ export default function UserList() {
       field: 'user',
       headerName: 'User',
       flex: 1,
-      minWidth: 150,
+      minWidth: 130,
       renderCell: (params) => {
         return (
           <Link to={`user/${params.row.id}`}>
@@ -96,7 +96,7 @@ export default function UserList() {
       field: 'action',
       headerName: 'Action',
       flex: 1,
-      minWidth: 100,
+      width: 80,
       renderCell: (params) => {
         return (
           <>
