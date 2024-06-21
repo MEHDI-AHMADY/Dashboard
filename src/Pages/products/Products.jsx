@@ -6,6 +6,7 @@ import Button from '@mui/material/Button';
 import { products } from '../../datas';
 import { Link } from 'react-router-dom';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
+import './products.css'
 
 const style = {
   productListProduct : `flex items-center`,
