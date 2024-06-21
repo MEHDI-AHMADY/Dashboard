@@ -4,7 +4,7 @@ import Chart from '../../Components/chart/Chart.jsx';
 import { productsSaleData } from '../../datas.jsx';
 
 const style = {
-    product : `flex-[4] p-5`,
+    product : `flex-[4] p-5 dark:text-white`,
     productTitleContainer : `flex items-center justify-between`,
     productTitle : `text-xl`,
     productAddBtn : `w-[80px] p-[5px] cursor-pointer text-white text-[16px] bg-slate-700 rounded-md`,

@@ -1,11 +1,14 @@
-import React , { useState } from 'react';
+import React , { useContext, useState } from 'react';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import LanguageIcon from '@mui/icons-material/Language';
 import SettingsIcon from '@mui/icons-material/Settings';
 import MenuIcon from '@mui/icons-material/Menu';
+import WbSunnyIcon from '@mui/icons-material/WbSunny';
+import DarkModeIcon from '@mui/icons-material/DarkMode';
+import { ThemeContext } from '../../Context/ThemeContext';
 
 const style = {
-    topbar : `w-full h-[50px] bg-white sticky top-0 z-30`,
+    topbar : `w-full h-[50px] bg-white sticky top-0 z-30 dark:bg-gray-700`,
     topbarWrapper : `flex items-center justify-between h-full py-0 px-5`,
     logo  : `font-bold text-[20px] cursor-pointer text-blue-500`,
     topbarRight : `flex items-center`,
@@ -15,6 +18,8 @@ const style = {
 }   
 
 export default function Topbar({ showMenuHandler }) {
+
+    const { theme , toggleTheme } = useContext(ThemeContext);
 
   return (
     <div className={style.topbar}>
@@ -26,16 +31,19 @@ export default function Topbar({ showMenuHandler }) {
                 <span className={style.logo}>Dashboard</span>
             </div>
             <div className={style.topbarRight}>
+               <button className='outline-none mr-[10px]' onClick={toggleTheme}>
+                {theme === 'dark' ? <WbSunnyIcon className="dark:text-white"/> : <DarkModeIcon />}
+                </button>
                 <div className={style.topbarIconContainer}>
-                    <NotificationsIcon />
+                    <NotificationsIcon className="dark:text-white"/>
                     <span className={style.topIconBadge}>2</span>
                 </div>
                 <div className={style.topbarIconContainer}>
-                    <LanguageIcon />
+                    <LanguageIcon className="dark:text-white"/>
                     <span className={style.topIconBadge}>2</span>
                 </div>
                 <div className={style.topbarIconContainer}>
-                    <SettingsIcon />
+                    <SettingsIcon className="dark:text-white"/>
                 </div>
                 <img src="/images/shayea.jpg" className={style.topAvatar}/>
             </div>

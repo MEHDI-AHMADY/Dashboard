@@ -3,7 +3,7 @@ import { ResponsiveContainer , LineChart , Line , XAxis , CartesianGrid , Toolti
 
 
 const style = {
-    chart : `m-5 p-5 shadow-chart`,
+    chart : `m-5 p-5 shadow-chart dark:text-white`,
     chartTitle : `mb-5`,
 }
 

@@ -9,14 +9,14 @@ export default function WidgetLg() {
 
     const style = {
         widgetLg : `flex-[2] p-5 my-3 md:my-0 shadow-normal` , 
-        widgetLgTitle : `text-[22px] font-[600]`,
+        widgetLgTitle : `text-[22px] font-[600] dark:text-white`,
         widgetLgTableWrapper : `overflow-x-auto`,
         widgetLgTable : `border-spacing-[20px] w-full`,
-        widgetLgTh : `text-left`,
+        widgetLgTh : `text-left dark:text-white`,
         widgetLgUser : `flex items-center my-5 whitespace-nowrap`,
         widgetLgImg : `hidden sm:block sm:w-[40px] sm:h-[40px] sm:rounded-full sm:object-cover mr-2` , 
-        widgetLgDate : `font-light whitespace-nowrap`,
-        widgetLgaAmount : `font-light whitespace-nowrap`,
+        widgetLgDate : `font-light whitespace-nowrap dark:text-white`,
+        widgetLgaAmount : `font-light whitespace-nowrap dark:text-white`,
         widgetLgBtn : `py-[5px] px-[7px] rounded-lg border-0`,
     }
 
@@ -38,7 +38,7 @@ export default function WidgetLg() {
                     <tr key={transaction.id}>
                         <td className={style.widgetLgUser}>
                             <img src={transaction.img} className={style.widgetLgImg} />
-                            <span className="widgetLgName">{transaction.customer}</span>
+                            <span className="dark:text-white">{transaction.customer}</span>
                         </td>
         
                         <td className={style.widgetLgDate}>

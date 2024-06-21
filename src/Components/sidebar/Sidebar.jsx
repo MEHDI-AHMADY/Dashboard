@@ -5,12 +5,12 @@ import CloseIcon from '@mui/icons-material/Close';
 
 const style = {
   mobileSidebar : `fixed top-0 bottom-0 translate-x-[-194px] transition-transform duration-300 flex-[2] z-50 bg-slate-200 p-7 lg:hidden`,
-  sidebar: `hidden lg:block flex-1 bg-[rgba(251,251,255)] sticky top-[50px]`,
+  sidebar: `hidden lg:block flex-1 bg-[rgba(251,251,255)] sticky top-[50px] dark:bg-gray-700`,
   sidebarWrapper: `p-2 text-[#555]`,
   sidebarMenu: `mb-[2px]`,
   sidebarTitle: `text-[13px] text-[rgba(187,186,186)]`,
   sidebarList: `p-[5px]`,
-  sidebarListItem: `flex items-center rounded-xl hover:bg-[rgba(240,240,255)] p-[5px] cursor-pointer my-1`,
+  sidebarListItem: `flex items-center rounded-xl hover:bg-[rgba(240,240,255)] dark:hover:bg-gray-800 p-[5px] cursor-pointer my-1 dark:text-white`,
   sidebarIcon: `mr-[5px] text-[20px]`,
 };
 

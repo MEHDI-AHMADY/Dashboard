@@ -4,9 +4,9 @@ import axios from 'axios';
 
 const style = {
     widgetSm : `flex-1 p-5 md:mr-5 shadow-normal`,
-    widgetSmTitle : `text-[22px] font-medium`,
+    widgetSmTitle : `text-[22px] font-medium dark:text-white`,
     widgetSmList : `m-0 p-0`,
-    widgetSmListItem : `flex justify-between items-center my-5 mx-0`,
+    widgetSmListItem : `flex justify-between items-center my-5 mx-0 dark:text-white`,
     widgetSmImg : `w-[40px] h-[40px] rounded-full object-cover`,
     widgetSmUser : `flex flex-col`,
     widgetSmUserName : `font-bold`,

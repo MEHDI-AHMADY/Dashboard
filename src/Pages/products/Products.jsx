@@ -101,7 +101,7 @@ export default function Products() {
 
   return (
     <div className='flex-[4] mx-2'>
-    <DataGrid 
+    <DataGrid className='dark:text-white'
       rows={productsData}
       columns={columns}
       pageSize={5}

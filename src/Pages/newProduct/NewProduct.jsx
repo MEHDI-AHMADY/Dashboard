@@ -6,7 +6,7 @@ import { showAlert } from '../../util';
 import { collection , addDoc } from 'firebase/firestore';
 
 const style = {
-    newProduct : `flex-[4] flex items-center justify-center mx-5 bg-slate-100 rounded-md`,
+    newProduct : `flex-[4] flex items-center justify-center mx-5 bg-slate-100 rounded-md dark:bg-gray-600`,
     newProductFormWrapper : `p-4 rounded-md`,
     newProductForm : `flex flex-col gap-3`,
     newProductTitle : `p-2 rounded-sm outline-none`,

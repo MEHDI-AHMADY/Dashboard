@@ -23,7 +23,7 @@
 
 @layer components {
     .activeSidebarItem {
-        @apply bg-[rgba(240,240,255)]
+        @apply bg-[rgba(240,240,255)] dark:bg-gray-900
     }
 
     .negative { 

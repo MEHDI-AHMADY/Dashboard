@@ -6,6 +6,7 @@ import { useMediaQuery } from '@mui/material';
 import { userRows } from '../../datas';
 import { Link } from 'react-router-dom';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
+import './UserList.css'
 
 const style = {
   userListUser : `flex items-center`,
@@ -118,7 +119,7 @@ export default function UserList() {
 
   return (
     <div className='flex-[4] mx-2'>
-    <DataGrid 
+    <DataGrid className='dark:text-white dark:bg-transparent'
       rows={userDatas}
       columns={columns}
       pageSize={3}
