@@ -35,7 +35,7 @@ export default function Products() {
     {
       field: 'title',
       headerName: 'Name',
-      width: 80,
+      width: 110,
       renderCell: (params) => {
         return (
           <Link to={`/product/${params.row.id}`}>
@@ -109,6 +109,7 @@ export default function Products() {
       rowsPerPageOptions={[5 , 10 , 15]}
       pagination
       disableSelectionOnClick
+      autoHeight={true}
       checkboxSelection
       initialState={{
         pagination: {
