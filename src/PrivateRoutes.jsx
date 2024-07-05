@@ -1,10 +1,10 @@
 import React from 'react';
-import { Navigate, Outlet } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 import { isLogin } from './util';
 
 
-export default function PrivateRoutes() {
+export default function PrivateRoutes({ children }) {
     let adminIsLogin = isLogin('mehdi')      //IT MUST BE (mehdi)
 
-    return adminIsLogin ? <Outlet /> : <Navigate to='/login' />
+    return adminIsLogin ? children : <Navigate to='/login' />
 }

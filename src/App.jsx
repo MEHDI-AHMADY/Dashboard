@@ -14,7 +14,7 @@ function App() {
   };
 
   return (
-    <div className="font-poppins overflow-x-hidden dark:bg-gray-700">
+    <div className="font-poppins dark:bg-gray-700">
       <Topbar showMenuHandler={showMenuHandler} />
       <div className="flex mt-5">
         <Sidebar

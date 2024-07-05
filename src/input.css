@@ -40,5 +40,17 @@
         @apply py-[5px] px-[7px] rounded-lg border-0 text-[#2a7ade] bg-[#ebf1fe]
     }
 
+    .sidebar-scrollbar::-webkit-scrollbar {
+        @apply w-[10px] h-[10px]
+    }
+
+    .sidebar-scrollbar::-webkit-scrollbar-track {
+        @apply bg-slate-800 
+      }
+
+      .sidebar-scrollbar::-webkit-scrollbar-thumb {
+        @apply bg-slate-400 rounded-sm
+      }
+
 }
 

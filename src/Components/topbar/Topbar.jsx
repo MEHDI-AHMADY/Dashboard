@@ -8,7 +8,7 @@ import DarkModeIcon from '@mui/icons-material/DarkMode';
 import { ThemeContext } from '../../Context/ThemeContext';
 
 const style = {
-    topbar : `w-full h-[50px] bg-white sticky top-0 z-30 dark:bg-gray-700`,
+    topbar : `w-full h-[50px] bg-white z-30 sticky top-0 dark:bg-gray-700`,
     topbarWrapper : `flex items-center justify-between h-full py-0 px-5`,
     logo  : `font-bold text-[20px] cursor-pointer text-blue-500`,
     topbarRight : `flex items-center`,
@@ -25,7 +25,7 @@ export default function Topbar({ showMenuHandler }) {
     <div className={style.topbar}>
         <div className={style.topbarWrapper}>
             <div className="cursor-pointer lg:hidden" onClick={showMenuHandler}>
-                <MenuIcon />    
+            <MenuIcon className="dark:text-white"/> 
             </div>
             <div>
                 <span className={style.logo}>Dashboard</span>
