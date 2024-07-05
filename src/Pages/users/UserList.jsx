@@ -118,7 +118,7 @@ export default function UserList() {
 
 
   return (
-    <div className='flex-[4] mx-2'>
+    <div className='flex-[4] mx-2 h-[calc(100vh-70px)]'>
     <DataGrid className='dark:text-white dark:bg-transparent'
       rows={userDatas}
       columns={columns}

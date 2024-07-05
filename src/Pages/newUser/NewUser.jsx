@@ -3,8 +3,8 @@ import { showAlert } from "../../util";
 import axios from "axios";
 
 const style = {
-  login: `flex-[4] mx-5 p-5 rounded-md bg-slate-100 flex flex-col items-center gap-12 dark:bg-slate-600`,
-  loginTitle: `text-slate-500 font-bold text-lg my-4 dark:text-white`,
+  login: `flex-[4] mx-5 p-1 rounded-md bg-slate-100 flex flex-col items-center gap-12 dark:bg-slate-600`,
+  loginTitle: `text-slate-500 font-bold text-lg my-2 dark:text-white`,
   loginFormWrapper: `flex items-center justify-center`,
   loginForm: `flex flex-col items-center gap-3`,
   loginFormInput: `p-2 focus:outline-none`,

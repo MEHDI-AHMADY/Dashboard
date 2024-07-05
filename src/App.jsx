@@ -14,9 +14,9 @@ function App() {
   };
 
   return (
-    <div className="font-poppins dark:bg-gray-700">
+    <div className="font-poppins dark:bg-gray-700 h-full">
       <Topbar showMenuHandler={showMenuHandler} />
-      <div className="flex mt-5">
+      <div className="flex mt-5 dark:bg-gray-700">
         <Sidebar
           showMenuHandler={showMenuHandler}
           isVisible={isSidebarVisible}

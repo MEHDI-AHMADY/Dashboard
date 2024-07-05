@@ -56,7 +56,7 @@ export default function Sidebar({ isVisible , showMenuHandler }) {
         </div>
       </div>
 
-      <div className={`${style.sidebar} sidebar-scrollbar`} style={{height : 'calc(100vh - 50px)'}}>
+      <div className={`${style.sidebar} sidebar-scrollbar`} style={{height : 'calc(100vh - 70px)'}}>
         <div className={style.sidebarWrapper}>
           {sidebarItems.map((menu, index) => (
             <div key={index} className={style.sidebarMenu}>
